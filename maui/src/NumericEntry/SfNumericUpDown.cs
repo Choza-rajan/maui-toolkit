@@ -1081,17 +1081,17 @@ namespace Syncfusion.Maui.Toolkit.NumericUpDown
 				return _numericUpDownSemanticsNodes;
 			}
 
-			if (_isClearButtonVisible)
+			if (_isClearButtonVisible && !IsTextInputLayout)
 			{
 				AddSemanticsNode(_clearButtonRectF, 1, "Clear button");
 			}
 
-			if (UpDownPlacementMode == NumericUpDownPlacementMode.InlineVertical)
+			if (IsInlineVerticalPlacement() && !IsTextInputLayout)
 			{
 				AddSemanticsNode(_upButtonRectF, 2, "Up button");
 				AddSemanticsNode(_downButtonRectF, 3, "Down button");
 			}
-			if (UpDownPlacementMode == NumericUpDownPlacementMode.Inline)
+			if (IsInlinePlacement() && !IsTextInputLayout)
 			{
 				AddSemanticsNode(_downButtonRectF, 2, "Up button");
 				AddSemanticsNode(_upButtonRectF, 3, "Down button");
